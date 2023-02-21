@@ -2,4 +2,4 @@
 
 namespace iTodo.Application.Features.ItemFeatures.CreateItem;
 
-public sealed record CreateItemRequest(string? Title, bool IsDone) : IRequest<CreateItemResponse>;
+public record CreateItemRequest(string? Title) : IRequest<CreateItemResponse>;

@@ -21,6 +21,8 @@ public sealed class CreateItemHandler : IRequestHandler<CreateItemRequest, Creat
     public async Task<CreateItemResponse> Handle(CreateItemRequest request, CancellationToken cancellationToken)
     {
         var item = _mapper.Map<Item>(request);
+        item.CreatedOn = DateTime.Now;
+        item.CreatedBy = "test_user";
 
         await _itemRepository.CreateAsync(item);
 
