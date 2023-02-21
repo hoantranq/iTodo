@@ -1,8 +1,8 @@
 ﻿namespace iTodo.Domain.Common;
 
-public class EntityBase<T>
+public abstract class EntityBase
 {
-	public T Id { get; set; } = default!;
+	public Guid Id { get; set; } = default!;
 
 	public string? CreatedBy { get; set; }
 

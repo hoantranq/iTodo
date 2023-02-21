@@ -6,4 +6,29 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Common\" />
+    <None Remove="Common\Behaviours\" />
+    <None Remove="Common\Exceptions\" />
+    <None Remove="Features\" />
+    <None Remove="Features\ItemFeatures\" />
+    <None Remove="Features\ItemFeatures\CreateItem\" />
+    <None Remove="Features\ItemFeatures\GetAllItems\" />
+    <None Remove="Features\ItemFeatures\GetItem\" />
+    <None Remove="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Common\Behaviours\" />
+    <Folder Include="Common\Exceptions\" />
+    <Folder Include="Features\" />
+    <Folder Include="Features\ItemFeatures\" />
+    <Folder Include="Features\ItemFeatures\CreateItem\" />
+    <Folder Include="Features\ItemFeatures\GetAllItems\" />
+    <Folder Include="Features\ItemFeatures\GetItem\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iTodo.Domain\iTodo.Domain.csproj" />
+  </ItemGroup>
 </Project>

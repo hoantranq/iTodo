@@ -2,7 +2,7 @@
 
 namespace iTodo.Domain.Entities;
 
-public class Item : EntityBase<Guid>
+public sealed class Item : EntityBase
 {
     public string? Title { get; set; }
     public bool IsDone { get; set; }
