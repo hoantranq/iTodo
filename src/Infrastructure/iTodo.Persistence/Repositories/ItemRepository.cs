@@ -9,10 +9,10 @@ public class ItemRepository : RepositoryBase<Item>, IItemRepository
 {
     private readonly AppDbContext _context;
 
-	public ItemRepository(AppDbContext context) : base(context)
-	{
+    public ItemRepository(AppDbContext context) : base(context)
+    {
         _context = context;
-	}
+    }
 
     public async Task<Item> GetSingleItemByUsernameAsync(string username, CancellationToken cancellationToken)
     {
@@ -21,9 +21,10 @@ public class ItemRepository : RepositoryBase<Item>, IItemRepository
         return result;
     }
 
-    public async Task<List<Item>> GetAllItemsByUsernameAsync(string username, CancellationToken cancellationToken)
+    public async Task<IEnumerable<Item>> GetAllItemsByUsernameAsync(string username,
+        CancellationToken cancellationToken)
     {
-        var result = await _context.Items.ToListAsync(cancellationToken) ?? null!;
+        var result = await _context.Items.ToListAsync(cancellationToken);
 
         return result;
     }

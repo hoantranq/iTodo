@@ -4,7 +4,8 @@ using MediatR;
 
 namespace iTodo.Application.Common.Behaviours;
 
-public sealed class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
+public sealed class ValidationBehavior<TRequest, TResponse>
+    : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
 {
     private readonly IEnumerable<IValidator<TRequest>> _validators;
 
@@ -13,7 +14,9 @@ public sealed class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<
         _validators = validators;
     }
 
-    public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
+    public async Task<TResponse> Handle(TRequest request,
+        RequestHandlerDelegate<TResponse> next,
+        CancellationToken cancellationToken)
     {
         if (!_validators.Any()) return await next();
 
@@ -27,11 +30,8 @@ public sealed class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<
             .Distinct()
             .ToArray();
 
-        if (errors.Any())
-        {
-            throw new BadRequestException(errors);
-        }
-            
+        if (errors.Any()) throw new BadRequestException(errors);
+
         return await next();
     }
 }

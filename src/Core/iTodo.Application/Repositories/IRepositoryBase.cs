@@ -9,5 +9,5 @@ public interface IRepositoryBase<T> where T : EntityBase
     Task DeleteAsync(T entity);
 
     Task<T> GetByIdAsync(Guid id, CancellationToken cancellationToken);
-    Task<List<T>> GetAllAsync(CancellationToken cancellationToken);
+    Task<IEnumerable<T>> GetAllAsync(CancellationToken cancellationToken);
 }

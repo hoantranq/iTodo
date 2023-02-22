@@ -1,8 +1,12 @@
-﻿namespace iTodo.Application.Features.ItemFeatures.CreateItem;
+namespace iTodo.Application.Features.ItemFeatures.Dtos;
 
-public sealed record class CreateItemResponse
+public class ItemResponseDto
 {
-    public Guid Id { get; set; } = default!;
+    public Guid Id { get; set; }
+
+    public string? Title { get; set; }
+
+    public bool IsDone { get; set; }
 
     public string? CreatedBy { get; set; }
 

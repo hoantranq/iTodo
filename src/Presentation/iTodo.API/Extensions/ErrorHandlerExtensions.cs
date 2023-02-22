@@ -1,13 +1,19 @@
-﻿using iTodo.Application.Common.Exceptions;
+﻿using System.Net;
+using iTodo.Application.Common.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 using Newtonsoft.Json;
-using System.Net;
-using System.Text.Json;
 
 namespace iTodo.API.Extensions;
 
+/// <summary>
+/// 
+/// </summary>
 public static class ErrorHandlerExtensions
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="app"></param>
     public static void UseErrorHandler(this IApplicationBuilder app)
     {
         app.UseExceptionHandler(appError =>
@@ -22,10 +28,10 @@ public static class ErrorHandlerExtensions
                 context.Response.ContentType = "application/json";
                 context.Response.StatusCode = contextFeature.Error switch
                 {
-                    BadRequestException => (int)HttpStatusCode.BadRequest,
-                    OperationCanceledException => (int)HttpStatusCode.ServiceUnavailable,
-                    NotFoundException => (int)HttpStatusCode.NotFound,
-                    _ => (int)HttpStatusCode.InternalServerError
+                    BadRequestException => (int) HttpStatusCode.BadRequest,
+                    OperationCanceledException => (int) HttpStatusCode.ServiceUnavailable,
+                    NotFoundException => (int) HttpStatusCode.NotFound,
+                    _ => (int) HttpStatusCode.InternalServerError
                 };
 
                 var errorResponse = new

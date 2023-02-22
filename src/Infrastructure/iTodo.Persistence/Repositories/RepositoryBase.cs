@@ -7,7 +7,7 @@ namespace iTodo.Persistence.Repositories;
 
 public class RepositoryBase<T> : IRepositoryBase<T> where T : EntityBase
 {
-	private readonly AppDbContext _context;
+    private readonly AppDbContext _context;
 
     public RepositoryBase(AppDbContext context)
     {
@@ -37,7 +37,7 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : EntityBase
         return result;
     }
 
-    public async Task<List<T>> GetAllAsync(CancellationToken cancellationToken)
+    public async Task<IEnumerable<T>> GetAllAsync(CancellationToken cancellationToken)
     {
         var result = await _context.Set<T>().ToListAsync(cancellationToken);
 

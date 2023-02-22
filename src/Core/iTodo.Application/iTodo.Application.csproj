@@ -1,42 +1,41 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Common\" />
-    <None Remove="Common\Behaviours\" />
-    <None Remove="Common\Exceptions\" />
-    <None Remove="Features\" />
-    <None Remove="Features\ItemFeatures\" />
-    <None Remove="Features\ItemFeatures\CreateItem\" />
-    <None Remove="Features\ItemFeatures\GetAllItems\" />
-    <None Remove="Features\ItemFeatures\GetItem\" />
-    <None Remove="Repositories\" />
-    <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
-    <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
-    <None Remove="FluentValidation.DependencyInjectionExtensions" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="Common\Behaviours\" />
-    <Folder Include="Common\Exceptions\" />
-    <Folder Include="Features\" />
-    <Folder Include="Features\ItemFeatures\" />
-    <Folder Include="Features\ItemFeatures\CreateItem\" />
-    <Folder Include="Features\ItemFeatures\GetAllItems\" />
-    <Folder Include="Features\ItemFeatures\GetItem\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\iTodo.Domain\iTodo.Domain.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
-    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.1" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Remove="Common\"/>
+        <None Remove="Common\Behaviours\"/>
+        <None Remove="Common\Exceptions\"/>
+        <None Remove="Features\"/>
+        <None Remove="Features\ItemFeatures\"/>
+        <None Remove="Features\ItemFeatures\CreateItem\"/>
+        <None Remove="Features\ItemFeatures\GetAllItems\"/>
+        <None Remove="Features\ItemFeatures\GetItem\"/>
+        <None Remove="Repositories\"/>
+        <None Remove="MediatR.Extensions.Microsoft.DependencyInjection"/>
+        <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection"/>
+        <None Remove="FluentValidation.DependencyInjectionExtensions"/>
+        <None Remove="Features\ItemFeatures\UpdateItem\"/>
+        <None Remove="Features\ItemFeatures\DeleteItem\"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Common\"/>
+        <Folder Include="Common\Behaviours\"/>
+        <Folder Include="Common\Exceptions\"/>
+        <Folder Include="Features\"/>
+        <Folder Include="Features\ItemFeatures\"/>
+        <Folder Include="Repositories\"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\iTodo.Domain\iTodo.Domain.csproj"/>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0"/>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0"/>
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.1"/>
+    </ItemGroup>
 </Project>
