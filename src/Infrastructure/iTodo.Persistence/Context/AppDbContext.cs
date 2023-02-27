@@ -9,5 +9,5 @@ public class AppDbContext : DbContext
     {
     }
 
-    public DbSet<Item> Items { get; set; }
+    public DbSet<Item> Items { get; set; } = default!;
 }

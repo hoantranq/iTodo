@@ -10,7 +10,7 @@ public class ItemResponseDto
 
     public string? CreatedBy { get; set; }
 
-    public string? UpdatedBy { get; set; }
+    public string? ModifiedBy { get; set; }
 
     public DateTime? CreatedOn { get; set; }
 

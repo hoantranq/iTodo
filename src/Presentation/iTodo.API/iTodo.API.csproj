@@ -9,35 +9,39 @@
         <UserSecretsId>99254f05-3467-4c32-b0e0-5c9d2e9f62a9</UserSecretsId>
     </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' "/>
-    <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' "/>
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.3"/>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
-        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0"/>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.2"/>
-        <PackageReference Include="Serilog.AspNetCore" Version="6.1.0"/>
-        <PackageReference Include="Serilog.Sinks.Grafana.Loki" Version="8.1.0"/>
-        <PackageReference Include="Serilog.Sinks.File" Version="5.0.0"/>
-        <PackageReference Include="Serilog" Version="2.12.0"/>
-        <PackageReference Include="Serilog.Expressions" Version="3.4.1"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.3" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.3">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+        <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+        <PackageReference Include="Serilog.Sinks.Grafana.Loki" Version="8.1.0" />
+        <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+        <PackageReference Include="Serilog" Version="2.12.0" />
+        <PackageReference Include="Serilog.Expressions" Version="3.4.1" />
     </ItemGroup>
 
     <ItemGroup>
-        <None Remove="Controllers\"/>
-        <None Remove="MediatR.Extensions.Microsoft.DependencyInjection"/>
-        <None Remove="Extensions\"/>
-        <None Remove="Newtonsoft.Json"/>
-        <None Remove="Serilog.AspNetCore"/>
-        <None Remove="Serilog.Sinks.Grafana.Loki"/>
-        <None Remove="Serilog.Sinks.File"/>
-        <None Remove="Serilog"/>
-        <None Remove="Serilog.Expressions"/>
-        <None Remove="AutoWrapper.Core"/>
+        <None Remove="Controllers\" />
+        <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+        <None Remove="Extensions\" />
+        <None Remove="Newtonsoft.Json" />
+        <None Remove="Serilog.AspNetCore" />
+        <None Remove="Serilog.Sinks.Grafana.Loki" />
+        <None Remove="Serilog.Sinks.File" />
+        <None Remove="Serilog" />
+        <None Remove="Serilog.Expressions" />
+        <None Remove="AutoWrapper.Core" />
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="Controllers\"/>
-        <Folder Include="Extensions\"/>
+        <Folder Include="Controllers\" />
+        <Folder Include="Extensions\" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\Infrastructure\iTodo.Persistence\iTodo.Persistence.csproj">
